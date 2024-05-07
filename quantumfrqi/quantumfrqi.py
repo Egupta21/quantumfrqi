@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import csv
 
 def processimage(image_name, num_shots=1024*1024, side_dimension=16):
+    IMAGE_NAME = image_name
     image_path = f"./data/images/{IMAGE_NAME}.png"
     try:
         image = Image.open(image_path)
@@ -26,7 +27,6 @@ def processimage(image_name, num_shots=1024*1024, side_dimension=16):
         side_dimension = 2"""
         
     print(f"Processing {image_name} with {num_shots} shots...")
-    IMAGE_NAME = image_name
     SIZE = (side_dimension, side_dimension)
     if(min(og_width, og_height) > side_dimension):
         prepare_dimensions(f"./data/images/{IMAGE_NAME}.png", f"./data/images/{IMAGE_NAME}{side_dimension}.png", SIZE)
