@@ -9,7 +9,6 @@ import sys, math
 import time
 import matplotlib.pyplot as plt
 import csv
-from frqi import processimage
 
 def processimage(image_name, num_shots=1024*1024, side_dimension=16):
     image_path = f"./data/images/{IMAGE_NAME}.png"
