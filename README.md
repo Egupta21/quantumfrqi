@@ -17,7 +17,7 @@ processimage('image_name', num_shots=1024*1024, side_dimensions=16)
 
 Next, create an empty folder called 'data' and place it in the same folder as the python file created earlier.
 
-```image_name``` = Name of the image without the image type
+```image_name``` = Name of the image without the image extension
 
 ```num_shots (optional)``` = (default 1024*1204) Number of shots you want to perform on prepared state. Higher number leads to higher accuracy but longer run time
 
