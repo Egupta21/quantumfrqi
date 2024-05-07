@@ -4,7 +4,7 @@
 
 Setup a new empty environment
 
-Install using pip install git+https://github.com/Egupta21/quantumfrqi.git
+Install using  ```python pip install git+https://github.com/Egupta21/quantumfrqi.git```
 
 ## Usage
 
