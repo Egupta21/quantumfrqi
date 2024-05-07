@@ -27,4 +27,6 @@ side_dimensions = default 16) Side length of the image in pixels. A higher numbe
 
 If the SSIM is low increase the number of shots. Recommend testing with 16x16 images or 32x32 images for time consideration
 
-
+The decoded image will be found in the ```'./data/output``` folder
+The execution log image will be found in the ```'./data/logs``` folder
+The image pixel sheet will be found in the ```'./data/sheets``` folder
