@@ -22,4 +22,5 @@ setup(
     description="Import images to automatically convert to Quantum format using FRQI",
     keywords="Quantum Image Processing, FRQI",
     url="http://example.com/QuantumImageProcessing",  # Optional project URL
+    test_suite='tests'  # This assumes your tests are in a directory called "tests"
 )
