@@ -15,6 +15,8 @@ def processimage(image_name, num_shots=1024*1024, side_dimension=16):
     image_path = f"./data/images/{IMAGE_NAME}.png"
     try:
         image = Image.open(image_path)
+        og_width = image_width(image)
+        og_height = image_height(image)
     except FileNotFoundError:
         raise FileNotFoundError(f"The image file {IMAGE_NAME}.png does not exist in the specified directory.")
         
