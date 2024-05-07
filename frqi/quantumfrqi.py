@@ -9,12 +9,28 @@ import sys, math
 import time
 import matplotlib.pyplot as plt
 import csv
+from frqi import processimage
 
 def processimage(image_name, num_shots=1024*1024, side_dimension=16):
-    print(f"Processing image at {image_name} with {num_shots} shots...")
+    image_path = f"./data/images/{IMAGE_NAME}.png"
+    try:
+        image = Image.open(image_path)
+    except FileNotFoundError:
+        raise FileNotFoundError(f"The image file {IMAGE_NAME}.png does not exist in the specified directory.")
+        
+    """if(min(og_width))
+    if(max(og_wdith, og_height) <= 8 and max(og_wdith, og_height) > 4):
+        side_dimension = 8
+    elif(max(og_wdith, og_height) <= 4 and max(og_wdith, og_height) > 2):
+        side_dimension = 4
+    else:
+        side_dimension = 2"""
+        
+    print(f"Processing {image_name} with {num_shots} shots...")
     IMAGE_NAME = image_name
     SIZE = (side_dimension, side_dimension)
-    prepare_dimensions(f"./data/images/{IMAGE_NAME}.png", f"./data/images/{IMAGE_NAME}{side_dimension}.png", SIZE)
+    if(min(og_width, og_height) > side_dimension):
+        prepare_dimensions(f"./data/images/{IMAGE_NAME}.png", f"./data/images/{IMAGE_NAME}{side_dimension}.png", SIZE)
     IMAGE_NAME = IMAGE_NAME+str(side_dimension)
     image_path = f"./data/images/{IMAGE_NAME}.png"
     image = Image.open(image_path)
@@ -22,8 +38,7 @@ def processimage(image_name, num_shots=1024*1024, side_dimension=16):
     og_height = image_height(image)
     side_len = max(og_height, og_width)
     if side_len < 2:
-        print("Image too small: Minimum 2x2 image required")
-        sys.exit()
+        raise ValueError("Invalid file size: Image must be over 2x2")
     num_qubit = num_qubit_finder(og_height, og_width)
     print(num_qubit)
 
