@@ -86,6 +86,7 @@ def processimage(image_name, num_shots=1024*1024, side_dimension=16):
     decoded_image = np.array(Image.open(output_file_path).convert('L'))
 
     if original_image.shape != decoded_image.shape:
+        print("we are getting here")
         decoded_image = remove_padding(original_image, decoded_image)
 
     mse_value = calculate_mse(original_image, decoded_image)
