@@ -4,6 +4,8 @@
 
 Setup a new empty environment in python=3.9 ```conda create -n me_env python=3.9```
 
+Run ```conda activate my_env```
+
 Install using  ```pip install git+https://github.com/Egupta21/quantumfrqi.git```
 
 ## Usage
@@ -16,6 +18,8 @@ processimage('image_name', num_shots=1024*1024, side_dimensions=16)
 ```
 
 Next, create an empty folder called 'data' and place it in the same folder as the python file created earlier.
+
+Create an empty folder called 'images' within 'data' and place image inside 'images'
 
 ```image_name``` = Name of the image without the image extension
 
