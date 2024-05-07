@@ -4,6 +4,8 @@
 
 Setup a new empty environment in python=3.9 ```conda create -n me_env python=3.9```
 
+Run ```conda activate my_env```
+
 Install using  ```pip install git+https://github.com/Egupta21/quantumfrqi.git```
 
 ## Usage
