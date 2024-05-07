@@ -2,6 +2,7 @@
 
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, Aer, execute
 from qiskit.circuit.library.standard_gates import RYGate, RYYGate
+from qiskit.quantum_info import Statevector
 import numpy as np
 import math
 import pandas as pd
@@ -33,14 +34,17 @@ def change(state, new_state):
         return c
 
 def binary(circ, state, new_state, num_qubit):
-    c = change(state, new_state)
-    if len(c) > 0:
-        circ.x(np.abs(c-(num_qubit-2)))
+    changed_indices = change(state, new_state)
+    if len(changed_indices) > 0:
+        for index in changed_indices:
+            circ.x(index)
     else:
         pass
 
 def cnri(circ, n, t, theta):
     controls = len(n)
+    if controls == 0:
+        raise ValueError("At least one control qubit must be specified")
     cry = RYGate(2*theta).control(controls)
     aux = np.append(n, t).tolist()
     circ.append(cry, aux)
@@ -50,7 +54,7 @@ def frqi(circ, n, t, angles):
     hadamard(circ, n)
     j = 0
     for i in angles:
-        print("running frqi " + str(j))
+        print("running frqi at angle index" + str(j))
         state = '{0:0{width}b}'.format(j-1, width=t)
         new_state = '{0:0{width}b}'.format(j, width=t)
         if j == 0:
