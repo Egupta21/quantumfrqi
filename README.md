@@ -1,12 +1,12 @@
 # quantumfrqi
 
-##Installation and Setup
+## Installation and Setup
 
 Setup a new empty environment
 
 Install using pip install git+https://github.com/Egupta21/quantumfrqi.git
 
-##Usage
+## Usage
 
 After installing, use as follows:
  ```python
