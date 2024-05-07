@@ -9,6 +9,7 @@ import sys, math
 import time
 import matplotlib.pyplot as plt
 import csv
+import os
 
 def processimage(image_name, num_shots=1024*1024, side_dimension=16):
     os.makedirs("./data/sheets", exist_ok=True)
