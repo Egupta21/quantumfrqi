@@ -21,7 +21,7 @@ Next, create an empty folder called 'data' and place it in the same folder as th
 
 Create an empty folder called 'images' within 'data' and place image inside 'images'
 
-```image_name``` = Name of the image without the image extension
+```image_name``` = Name of the image without the image extension. DISCLAIMER: Image extension can only be .png. So for example, If image is called 'bull.png' type 'bull'. It will not work if the image is called 'bull.jpg'
 
 ```num_shots (optional)``` = (default 1024*1204) Number of shots you want to perform on prepared state. Higher number leads to higher accuracy but longer run time
 
