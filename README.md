@@ -4,12 +4,12 @@
 
 Setup a new empty environment
 
-Install using  ```python pip install git+https://github.com/Egupta21/quantumfrqi.git```
+Install using  ```pip install git+https://github.com/Egupta21/quantumfrqi.git```
 
 ## Usage
 
 After installing, use as follows:
- ```python
+ ```
 from frqi import processimage
 
 processimage('image_name', num_shots, side_dimensions)
