@@ -29,28 +29,23 @@ def expand_image(image, side_length):
     return square_image
 
 def remove_padding(original_image, decoded_image):
+    new_image = np.zeros_like(original_image)
+    original_height, original_width = original_image.shape
+    decoded_height, decoded_width = decoded_image.shape
+
+    for i in range(original_height):
+        for j in range(original_width):
+            if i <= decoded_height and j <= decoded_width:
+                new_image[i, j] = decoded_image[i, j]
+
     print("Original Image:")
     print(original_image)
     print("Decoded Image:")
     print(decoded_image)
+    print("New Image with Decoded Values:")
+    print(new_image)
 
-    original_height, original_width = original_image.shape
-
-    col_sum = np.sum(decoded_image, axis=0)
-    valid_cols = col_sum > 0
-    cropped_image = decoded_image[:, valid_cols]
-
-    row_sum = np.sum(cropped_image, axis=1)
-    valid_rows = row_sum > 0
-    cropped_image = cropped_image[valid_rows, :]
-
-    if cropped_image.shape[0] > original_height:
-        cropped_image = cropped_image[:original_height, :]
-    if cropped_image.shape[1] > original_width:
-        cropped_image = cropped_image[:, :original_width]
-
-    print(cropped_image)
-    return cropped_image
+    return new_image
 
 def prepare_dimensions(input_image_path, output_image_path, new_size):
     original_image = Image.open(input_image_path)
