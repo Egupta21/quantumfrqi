@@ -12,7 +12,7 @@ Install using  ```pip install git+https://github.com/Egupta21/quantumfrqi.git```
 
 After installing, create an empty Python file and add the code below:
  ```
-from frqi import processimage
+from quantumfrqi import processimage
 
 processimage('image_name', num_shots=1024*1024, side_dimensions=16)
 ```
