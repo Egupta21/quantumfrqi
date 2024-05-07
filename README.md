@@ -21,7 +21,7 @@ Next, create an empty folder called 'data' and place it in the same folder as th
 
 ```num_shots (optional)``` = (default 1024*1204) Number of shots you want to perform on prepared state. Higher number leads to higher accuracy but longer run time
 
-```side_dimensions (optional)``` = default 16) Side length of the image in pixels. A higher number leads to better-quality image but also a higher run time
+```side_dimensions (optional)``` = (default 16) Side length of the image in pixels. A higher number leads to better-quality image but also a higher run time
 
 ## results
 
