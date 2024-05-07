@@ -32,7 +32,7 @@ def processimage(image_name, num_shots=1024*1024, side_dimension=16):
     SIZE = (side_dimension, side_dimension)
     if(min(og_width, og_height) > side_dimension):
         prepare_dimensions(f"./data/images/{IMAGE_NAME}.png", f"./data/images/{IMAGE_NAME}{side_dimension}.png", SIZE)
-    IMAGE_NAME = IMAGE_NAME+str(side_dimension)
+        IMAGE_NAME = IMAGE_NAME+str(side_dimension)
     image_path = f"./data/images/{IMAGE_NAME}.png"
     image = Image.open(image_path)
     og_width = image_width(image)
