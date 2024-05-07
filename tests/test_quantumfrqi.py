@@ -6,7 +6,7 @@ from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, Aer, exec
 from numpy.testing import assert_array_equal
 from quantumfrqi import remove_padding, expand_image, data_preparation, make_circ, decode
 from quantumfrqi import hadamard, cnri, frqi, binary, change
-from quantumfrqi import convert_to_image, num_qubit_finder, 
+from quantumfrqi import convert_to_image, num_qubit_finder
 import numpy as np
 
 class TestImageProcessing(unittest.TestCase):
