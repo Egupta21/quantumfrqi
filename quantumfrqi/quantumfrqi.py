@@ -11,6 +11,9 @@ import matplotlib.pyplot as plt
 import csv
 
 def processimage(image_name, num_shots=1024*1024, side_dimension=16):
+    os.makedirs("./data/sheets", exist_ok=True)
+    os.makedirs("./data/output", exist_ok=True)
+    os.makedirs("./data/logs", exist_ok=True)
     IMAGE_NAME = image_name
     image_path = f"./data/images/{IMAGE_NAME}.png"
     try:
@@ -44,7 +47,7 @@ def processimage(image_name, num_shots=1024*1024, side_dimension=16):
     print(num_qubit)
 
     if not is_square(image) or int(np.sqrt((2**num_qubit)/2)) != side_len:
-        print("The image is not a square")
+        print("The image requires padding")
         image = expand_image(image, int(np.sqrt((2**num_qubit)/2)))
     image_array = np.array(image)
     plt.imshow(image_array, cmap='gray', vmin=0, vmax=255)
