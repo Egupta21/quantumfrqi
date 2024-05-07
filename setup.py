@@ -14,7 +14,7 @@ setup(
         "matplotlib==3.8.0",
         "pandas==2.1.3",
         "scikit-image==0.19.2",
-        "scikit-learn==1.3.2"
+        "scikit-learn==1.3.2",
         "qiskit-aer==0.14.1"
     ],
     author="Eashan",
