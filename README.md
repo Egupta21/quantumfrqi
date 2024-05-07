@@ -8,7 +8,7 @@ Install using  ```pip install git+https://github.com/Egupta21/quantumfrqi.git```
 
 ## Usage
 
-After installing, use as follows:
+After installing, create an empty Python file and add the code below:
  ```
 from frqi import processimage
 
