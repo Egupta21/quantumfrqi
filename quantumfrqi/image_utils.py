@@ -34,20 +34,16 @@ def remove_padding(original_image, decoded_image):
     print("Decoded Image:")
     print(decoded_image)
 
-    # Determine the dimensions of the original image
     original_height, original_width = original_image.shape
 
-    # Remove zero columns from the right
     col_sum = np.sum(decoded_image, axis=0)
     valid_cols = col_sum > 0
     cropped_image = decoded_image[:, valid_cols]
 
-    # Remove zero rows from the bottom
     row_sum = np.sum(cropped_image, axis=1)
     valid_rows = row_sum > 0
     cropped_image = cropped_image[valid_rows, :]
 
-    # Ensure the cropped image dimensions match the original if it's still larger
     if cropped_image.shape[0] > original_height:
         cropped_image = cropped_image[:original_height, :]
     if cropped_image.shape[1] > original_width:
@@ -59,5 +55,5 @@ def remove_padding(original_image, decoded_image):
 def prepare_dimensions(input_image_path, output_image_path, new_size):
     original_image = Image.open(input_image_path)
     resized_image = original_image.resize(new_size)
-    bw_image = resized_image.convert("L")  # Convert to black and white
+    bw_image = resized_image.convert("L") 
     bw_image.save(output_image_path)
