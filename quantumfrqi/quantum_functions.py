@@ -34,12 +34,12 @@ def change(state, new_state):
         return c
 
 def binary(circ, state, new_state, num_qubit):
-    changed_indices = change(state, new_state)
-    if len(changed_indices) > 0:
-        for index in changed_indices:
-            circ.x(index)
+    c = change(state, new_state)
+    if len(c) > 0:
+        circ.x(np.abs(c-(num_qubit-2)))
     else:
         pass
+
 
 def cnri(circ, n, t, theta):
     controls = len(n)
@@ -54,7 +54,7 @@ def frqi(circ, n, t, angles):
     hadamard(circ, n)
     j = 0
     for i in angles:
-        print("running frqi at angle index" + str(j))
+        print("running frqi at angle index " + str(j))
         state = '{0:0{width}b}'.format(j-1, width=t)
         new_state = '{0:0{width}b}'.format(j, width=t)
         if j == 0:
